@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Co-Working Damasio</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Vídeos disponíveis
+                    </a>
+                </li>
+
+                
+                <li>
+                <div class="mistvideo" id="liberato_2lxsCR1AoAgF">
+                    <a href="http://10.222.30.185:8080/liberato.html" target="video">Liberato</a>
+                </div>
+                </li>
+
+                <li>
+                <div class="mistvideo" id="bela_mp7Os7vvV6zi">
+                    <a href="http://10.222.30.185:8080/bela.html" target="video">Bela</a>
+                </div>
+                </li>
+
+                <li>
+                <div class="mistvideo" id="bela_mp7Os7vvV6zi">
+                    <a href="http://10.222.30.185:8080/quad.html" target="video">Quad</a>
+                </div>
+                </li>
+
+                <li>
+                <div class="mistvideo" id="filme1_cHBnVqOeo3Dz">
+                    <a onclick="sendVideo()" href="http://10.222.30.185:8080/filme1.html" target="video">Filme 1</a>
+                </div>
+                <li>
+
+                <li>
+                <div class="mistvideo" id="filme2_CAWOFjiAIg7A">
+                    <a href="http://10.222.30.185:8080/filme2.html" target="video">Filme 2</a>
+                </div>
+                </li>
+
+                <li>
+                <div class="mistvideo" id="filme3_uCxqLXEuicvk">
+                    <a href="http://10.222.30.185:8080/filme3.html" target="video">Filme 3</a>
+                </div>
+                </li>
+
+                <li>
+                <div class="mistvideo" id="filme4_c6pt1j0RTW0t">
+                    <a href="http://10.222.30.185:8080/filme4.html" target="video">Filme 4    </a>
+                </div>
+                </li>
+
+                <li>
+                <div>
+                    <a href="http://localhost:8080/ski.html" target="video">Ski</a>
+                </div>
+                </li>
+
+                <li>
+                <div>
+                    <a onclick="sendVideo()" href="sample2.mp4" target="video" type="video/mp4">Sample2</a>
+                </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href=""><img src="logo_damasio.jpg" width="100px"></a>
+                        <h1>Co-Working Damásio</h1>
+                        <p>Seus vídeos serão reproduzidos aqui.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Ver lista de vídeos</a>
+                        <div style="text-align:center"> 
+                          <button onclick="playPause()">Play/Pause</button> 
+                          <button onclick="makeBig()">Big</button>
+                          <button onclick="makeSmall()">Small</button>
+                          <button onclick="makeNormal()">Normal</button>
+                          <br><br>
+                          <video name="" width="420" id="video" controls>
+                            <source src="sample.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                          </video>
+
+                          <iframe src="" name="video"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script> 
+    var myVideo = document.getElementById("video"); 
+
+    function playPause() { 
+        if (myVideo.paused) 
+            myVideo.play(); 
+        else 
+            myVideo.pause(); 
+    } 
+
+    function makeBig() { 
+        myVideo.width = 560; 
+    } 
+
+    function makeSmall() { 
+        myVideo.width = 320; 
+    } 
+
+    function makeNormal() { 
+        myVideo.width = 420; 
+    } 
+    </script>
+
+    <script>
+    function sendVideo() {
+        var videoFile = "sample2.mp4"
+        $('#video source').attr('src', videoFile);
+        $("#video")[0].load();
+    }
+    </script>
+
+</body>
+
+</html>
